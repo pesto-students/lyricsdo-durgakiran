@@ -54,7 +54,7 @@ function updateResults(results) {
         <img src="${ele.album.cover_small}" alt="album cover" />
       </div>
       <div class="search-text">
-        <div class="title">${ele.title}</div>
+        <div class="title">${ele.title.length > 28 ? `${ele.title.substr(0, 28)}...` : ele.title}</div>
         <div class='description'>
           <div>Artist: <span class="artist">${ele.artist.name}</span></div>
           <div>Album: <span class="artist">${ele.album.title}</span></div>

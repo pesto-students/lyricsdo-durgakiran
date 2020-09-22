@@ -21,7 +21,7 @@ input[type='text'] {
     font-size: 16px;
     font-family: var(--font-family-heading);
     font-weight: 500;
-    line-height: 2;
+    line-height: 1.6;
 }
 
 .result-tile .artist, .result-tile .artist {
