@@ -12,11 +12,16 @@
 
 .content {
     flex: 1;
+    height: 100vh;
 }
 
 @media  (max-width: 960px) {
     .content {
         display: none;
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #000000;
     }
 }
 
@@ -52,6 +57,18 @@
     box-sizing: border-box;
 }
 
+.lyrics {
+    height: calc( 100% - 40px );
+    overflow: auto;
+}
+
+
+/** actions */
+@media (min-width: 960px) {
+    .actions {
+        display: none;
+    }
+}
 
 
 
