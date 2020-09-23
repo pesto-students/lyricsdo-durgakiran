@@ -1,0 +1,68 @@
+input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 0.5em;
+    border: 1px solid #bababa;
+    font-size: 16px;
+}
+
+.result-tile {
+    height: 64px;
+    box-sizing: border-box;
+    margin: 5px 0;
+    box-shadow: 1px 1px 0px rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.result-tile .title {
+    font-size: 16px;
+    font-family: var(--font-family-heading);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.result-tile .artist, .result-tile .artist {
+    color: var(--brand-secondary);
+    margin-right: 5px;
+}
+
+.description {
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+}
+
+.album-image {
+    height: 64px;
+    display: inline-block;
+}
+
+.album-image img {
+    height: 64px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+
+.search-text {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    max-width: calc( 100% - 78px );
+}
+
+
+button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    color: var( --brand-danger );
+    background: inherit;
+}

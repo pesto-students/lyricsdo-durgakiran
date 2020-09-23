@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Enjoy the lyrics of your favourite songs">
+    <title>Musica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
+    <link href="./css/variables.css" rel="stylesheet" type="text/css">
+    <link href="./css/layout.css" rel="stylesheet" type="text/css">
+    <link href="./css/elements.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            background-color: var(--background-color);
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--container of the app-->
+    <section class="container">
+        <div class="inner-container">
+
+
+            <div class="search-table">
+
+                <div class="search-box">
+                    <input type="text" placeholder="search ...." id="search"  onchange="handleInput()" oninput="handleInput()"/>
+                </div>
+
+                <div class="search-results" id="result-container">
+                    <!--search results comes here-->
+                    <div class="user-msg">
+                        Search For Songs
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content" id="content">
+                <div class="actions">
+                    <button onclick="closeLyricsNode()">X</button>
+                </div>
+                <div class="song-container">
+                    <div class="song-details">
+                        <div class="cover-image" id="selAlbumImg">
+                            
+                        </div>
+                        <div class="details">
+                            <h2 id="selTitleHeading"></h2>
+                            <div class="meta" id="meta">
+                                <!-- <div><span>Artist: </span> <a href="" class="artist">Led Zeppelin</a></div>
+                                <div><span>Album: </span> <a href="" class="album">Led Zeppelin IV (Deluxe Edition)</a>
+                                </div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="lyrics" id="lyrics">
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="./scripts.js" charset="utf-8"></script>
+    <script src="./js/elements.js" charset="utf-8"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            changePlaceHolderValue();
+            fetchSearchResults('stairway');
+        });
+    </script>
+</body>
+
+</html>

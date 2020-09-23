@@ -1,0 +1,13 @@
+:root{
+    --background-color: rgba(10,21,27,0.8);
+    --band-primary-color: #ff5722;
+    --brand-secondary: #d77418;
+    --brand-success: #2196f3;
+    --brand-warning: #f1c40f;
+    --brand-danger: #f44336;
+    --brand-info: #4caf50;
+    --color: #ffffff;
+    font-size: 16px;
+    --font-family: 'Noto Sans JP', sans-serif;
+    --font-family-heading: 'Roboto', sans-serif;
+}
