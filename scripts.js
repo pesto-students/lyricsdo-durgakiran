@@ -86,6 +86,7 @@ function fetchSearchResults(searchText) {
     const resultsNode = document.getElementById("result-container");
     clearTimeout(inputInterval);
     inputInterval = setTimeout(async () => {
+        if(window.innerWidth <= 960) closeLyricsNode();
         addLoaderInGetList();
         const xhrPromise = new Promise(getSuggestions(searchText));
         const response = await xhrPromise;
