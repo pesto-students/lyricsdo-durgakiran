@@ -163,5 +163,12 @@
     }
 }
 
+.page-buttons {
+    width: 70px;
+    background: var(--color);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 0px black;
+}
+
 
 
