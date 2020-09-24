@@ -121,6 +121,7 @@ function handleInput() {
 }
 
 function fetchSearchResults(searchText) {
+    if(!searchText) return;
     const resultsNode = document.getElementById("result-container");
     clearTimeout(inputInterval);
     inputInterval = setTimeout(async () => {
