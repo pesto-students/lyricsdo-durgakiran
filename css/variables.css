@@ -1,7 +1,8 @@
 :root{
     --background-color: #222222;
+    --black-shadow: #21252d;
     --band-primary-color: #ff5722;
-    --brand-secondary: #d77418;
+    --brand-secondary: #f44336;
     --brand-success: #2196f3;
     --brand-warning: #f1c40f;
     --brand-danger: #f44336;
