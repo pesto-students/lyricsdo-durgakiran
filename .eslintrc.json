@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jasmine": true
     },
     "extends": [
         "airbnb-base"
@@ -10,5 +11,6 @@
         "ecmaVersion": 12
     },
     "rules": {
+        "indent": ["error", 4]
     }
 }

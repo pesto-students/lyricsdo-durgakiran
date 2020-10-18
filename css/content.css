@@ -8,6 +8,12 @@
     color: var( --color );
 }
 
+@media (max-width: 960px) {
+    .results__lyrics {
+        display: none;
+    }
+}
+
 .results__lyrics-header {
     display: flex;
     flex-direction: row;
