@@ -99,3 +99,31 @@
     align-items: center;
 }
 
+.results__lyrics-header-shimmer {
+    display: flex;
+    flex-direction: row;
+}
+
+.results__lyrics-header-meta-shimmer {
+    width: 200px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.img-shimmer {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+.title-shimmer {
+    width: 200px;
+    height: 10px;
+    display: inline-block;
+}
+
+.shimmer-content {
+    width: 400px;
+    height: 300px;
+}
+

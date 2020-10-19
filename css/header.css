@@ -115,8 +115,14 @@
     .header {
         height: 120px;
     }
+    .header__logo {
+        margin-top: 10px;
+    }
+    .occ-space {
+        flex: 1 100%;
+    }
     .header__search {
-        order: 4;
+        order: 3;
         margin-right: 0px;
         flex: 1;
     }
