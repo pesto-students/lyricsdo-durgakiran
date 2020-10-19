@@ -85,8 +85,20 @@ const uiManipulations = {
         resultsNode.innerHTML = `${this.createSearchResultsHtml(results, total)}`;
         return true;
     },
-    addMoreDocs() {
-
+    createLyricsLoader() {
+        const html = `
+                <div class="results__lyrics-header-shimmer">
+                    <div class="img-shimmer shimmer" style="width: 100px"></div>
+                    <div class="results__lyrics-header-meta-shimmer">
+                        <div class="title-shimmer shimmer" style="height: 10px"></div>
+                        <div class="title-shimmer shimmer" style="height: 10px"></div>
+                        <div class="title-shimmer shimmer" style="height: 10px"></div>
+                    </div>
+                </div>
+                <div class="results__lyrics-content">
+                    <div class="shimmer-content shimmer" style="height: 400px"></div>
+                </div>`;
+        return html;
     },
     createLyricsHtml(lyrics, artist, song, album, image) {
         const html = `<div class="results__lyrics-header">
@@ -109,31 +121,6 @@ const uiManipulations = {
                     </div>
                     <div class="results__lyrics-content">
                         <div class="results__lyrics-content-options">
-                            <div class="option">
-                                Favorite
-                                <div class="header__icon">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        aria-hidden="true"
-                                        focusable="false"
-                                        width="1em"
-                                        height="1em"
-                                        style="
-                                            -ms-transform: rotate(360deg);
-                                            -webkit-transform: rotate(360deg);
-                                            transform: rotate(360deg);
-                                        "
-                                        preserveAspectRatio="xMidYMid meet"
-                                        viewBox="0 0 32 32"
-                                    >
-                                        <path
-                                            d="M22.45 6a5.47 5.47 0 0 1 3.91 1.64a5.7 5.7 0 0 1 0 8L16 26.13L5.64 15.64a5.7 5.7 0 0 1 0-8a5.48 5.48 0 0 1 7.82 0l2.54 2.6l2.53-2.58A5.44 5.44 0 0 1 22.45 6m0-2a7.47 7.47 0 0 0-5.34 2.24L16 7.36l-1.11-1.12a7.49 7.49 0 0 0-10.68 0a7.72 7.72 0 0 0 0 10.82L16 29l11.79-11.94a7.72 7.72 0 0 0 0-10.82A7.49 7.49 0 0 0 22.45 4z"
-                                            fill="#ffffff"
-                                        />
-                                    </svg>
-                                </div>
-                            </div>
                             <div class="option" onclick="copyLyrics()">
                                 copy
                                 <div class="header__icon">
@@ -201,6 +188,8 @@ const getResults = {
         uiManipulations.addSearchResults.call(uiManipulations, results.data, results.total);
     },
     getLyrics: async (artist, song, album, image) => {
+        const lyricsNode = document.getElementById('lyrics-node');
+        lyricsNode.innerHTML = uiManipulations.createLyricsLoader();
         const results = await httpCalls.getLyrics(artist, song).then((value) => value.json());
         uiManipulations.addLyrics.call(uiManipulations, results.lyrics, artist, song, album, image);
     },
