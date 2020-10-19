@@ -1,90 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0"
+        />
+        <meta
+            name="description"
+            content="Enjoy the lyrics of your favorite songs"
+        />
+        <title>Musica</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+        <link href="./css/variables.css" rel="stylesheet" type="text/css" />
+        <link href="./css/header.css" rel="stylesheet" type="text/css" />
+        <link
+            href="./css/search-results.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link href="./css/content.css" rel="stylesheet" type="text/css" />
+        <link href="./css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="./css/elements.css" rel="stylesheet" type="text/css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Enjoy the lyrics of your favorite songs">
-    <title>Musica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto&display=swap" rel="stylesheet">
-    <link href="./css/variables.css" rel="stylesheet" type="text/css">
-    <link href="./css/layout.css" rel="stylesheet" type="text/css">
-    <link href="./css/elements.css" rel="stylesheet" type="text/css">
+        <style>
+            body {
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+                    "Droid Sans", "Helvetica Neue", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                background-color: var(--background-color);
+            }
+        </style>
+    </head>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-              'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-              sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: var(--background-color);
-        }
-    </style>
-</head>
-
-<body>
-
-    <!--container of the app-->
-    <section class="container">
-        <div class="inner-container">
+    <body>
+        <!--container of the app-->
+        <section class="container">
 
 
-            <div class="search-table">
-
-                <div class="search-box">
-                    <input type="text" placeholder="search ...." id="search"  onchange="handleInput()" oninput="handleInput()"/>
+            <header class="header">
+                <div class="header__logo">
+                    <?xml version="1.0"?>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        id="Gradient"
+                        viewBox="0 0 512 512"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="linear-gradient"
+                                x1="256"
+                                y1="456"
+                                x2="256"
+                                y2="55.999"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#12c2e9" />
+                                <stop offset="0.5" stop-color="#c471ed" />
+                                <stop offset="1" stop-color="#f64f59" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            d="M496,112a8,8,0,0,0-8-8,192.846,192.846,0,0,1-36.588-3.135L439.663,61.7A8,8,0,0,0,432,56H416a8,8,0,0,0-7.663,5.7l-6.623,22.077C384.582,77.264,365.062,72,333.33,72c-40.254,0-60.657,8.442-80.389,16.607-4.291,1.776-8.53,3.529-12.941,5.181V64a8,8,0,0,0-9.569-7.845l-80,16A8,8,0,0,0,144,80v21.232c-16.072-2.884-27.634-7.668-39.611-12.624C84.658,80.443,64.255,72,24,72a8,8,0,0,0,0,16c37.075,0,55.143,7.477,74.271,15.392,13.082,5.413,26.466,10.946,45.729,14.063v19.921A23.987,23.987,0,0,0,116.033,173.3c-3.948-1.506-7.776-3.088-11.644-4.689C84.658,160.443,64.255,152,24,152a8,8,0,0,0,0,16c37.075,0,55.143,7.477,74.271,15.392C118,191.557,138.405,200,178.66,200s60.666-8.443,80.4-16.608c19.128-7.915,37.2-15.392,74.27-15.392,23.864,0,39.5,3.231,50.67,6.586v63.382c-15.366-4.1-31.438-5.968-50.67-5.968A225.676,225.676,0,0,0,304,233.766v-19.52l57.94-14.485a8,8,0,0,0-3.88-15.522l-64,16A8,8,0,0,0,288,208v28.63c-13.817,3.189-24.534,7.622-35.059,11.977C233.812,256.523,215.741,264,178.66,264s-55.142-7.477-74.271-15.392c-11.838-4.9-23.924-9.9-40.389-13.111V208a8,8,0,0,0-16,0v25.146A235.923,235.923,0,0,0,24,232a8,8,0,0,0,0,16,216.688,216.688,0,0,1,24,1.233v16.143A24,24,0,1,0,64,288V251.831C77.377,254.75,87.664,259,98.271,263.392,118,271.557,138.405,280,178.66,280s60.666-8.443,80.4-16.608c9.154-3.788,18.072-7.474,28.94-10.289v12.273A24,24,0,1,0,304,288V249.91A205.363,205.363,0,0,1,333.33,248c23.864,0,39.5,3.231,50.67,6.586V416a40,40,0,0,0,80,0V278.849A235.162,235.162,0,0,0,488,280a8,8,0,0,0,0-16,216.043,216.043,0,0,1-24-1.236V198.849A235.162,235.162,0,0,0,488,200a8,8,0,0,0,0-16,216.043,216.043,0,0,1-24-1.236V144h-.013a7.962,7.962,0,0,0-.324-2.3l-7.134-23.782A221.733,221.733,0,0,0,488,120,8,8,0,0,0,496,112ZM136,168a8,8,0,1,1,8-8A8.009,8.009,0,0,1,136,168ZM40,296a8,8,0,1,1,8-8A8.009,8.009,0,0,1,40,296Zm240,0a8,8,0,1,1,8-8A8.009,8.009,0,0,1,280,296ZM421.952,72h4.1l4.8,16h-13.7Zm-9.6,32h23.3l9.6,32h-42.5ZM400,152h16V360H400ZM160,86.559l64-12.8V98.9c-11.843,3.068-26,5.1-45.34,5.1-6.824,0-13-.255-18.66-.718ZM384.337,141.7a7.962,7.962,0,0,0-.324,2.3H384v13.968c-15.366-4.1-31.438-5.968-50.67-5.968-40.254,0-60.657,8.442-80.389,16.607C233.812,176.523,215.741,184,178.66,184a199.409,199.409,0,0,1-32.286-2.361A24.028,24.028,0,0,0,160,160V119.324c5.726.434,11.908.676,18.66.676,18.788,0,33.25-1.84,45.34-4.631v6.007A24,24,0,1,0,240,144V110.785c6.794-2.32,12.96-4.87,19.06-7.393C278.188,95.477,296.256,88,333.33,88c29.884,0,47.438,4.836,63.774,11.143ZM224,144a8,8,0,1,1-8-8A8.009,8.009,0,0,1,224,144ZM448,416a24,24,0,0,1-48,0v-8h48Zm0-24H400V376h48Zm0-32H432V152h16Z"
+                            style="fill: url(#linear-gradient)"
+                        />
+                    </svg>
                 </div>
-
-                <div class="search-results" id="result-container">
-                    <!--search results comes here-->
-                    <div class="user-msg">
-                        Search For Songs
+                <div class="occ-space">
+                </div>
+                <div class="header__search">
+                    <div class="header__search-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            width="24"
+                        >
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                                fill="rgb(195, 195, 195"
+                            />
+                        </svg>
+                    </div>
+                    <input
+                        type="search"
+                        placeholder="Search for lyrics you love..."
+                        id="search"
+                        onclick="addSearchSuggestions()"
+                        onchange="handleInteractions.handleInput()"
+                        oninput="handleInteractions.handleInput()"
+                        onblur="closeSearchHistory()"
+                        autocomplete="off"
+                    />
+                    <div class="header__search-suggestions" id="search-suggestions">
                     </div>
                 </div>
-                <div class="page-actions" id="pageActions">
-                    <button class="page-buttons" onclick="handlePagination('prev')">Prev</button>
-                    <button class="page-buttons" onclick="handlePagination('next')">Next</button>
-                </div>
 
+                <div class="header__favorites">
+                    <span>
+                        Favorites
+                    </span>
+                    <div class="header__icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            aria-hidden="true"
+                            focusable="false"
+                            width="1em"
+                            height="1em"
+                            style="
+                                -ms-transform: rotate(360deg);
+                                -webkit-transform: rotate(360deg);
+                                transform: rotate(360deg);
+                            "
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 32 32"
+                        >
+                            <path
+                                d="M22.45 6a5.47 5.47 0 0 1 3.91 1.64a5.7 5.7 0 0 1 0 8L16 26.13L5.64 15.64a5.7 5.7 0 0 1 0-8a5.48 5.48 0 0 1 7.82 0l2.54 2.6l2.53-2.58A5.44 5.44 0 0 1 22.45 6m0-2a7.47 7.47 0 0 0-5.34 2.24L16 7.36l-1.11-1.12a7.49 7.49 0 0 0-10.68 0a7.72 7.72 0 0 0 0 10.82L16 29l11.79-11.94a7.72 7.72 0 0 0 0-10.82A7.49 7.49 0 0 0 22.45 4z"
+                                fill="#ffffff"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <div class="inner-container">
+                <section class="results">
+                    <section class="results__list" id="result-container">
+                    </section>
+
+                    <section class="results__lyrics" id="lyrics-node">
+                    </section>
+                </section>
             </div>
+            <footer class="footer-container">
+                Github
+            </footer>
+        </section>
+        <!-- <script src="./js/routes.js" charset="utf-8"></script> -->
+        <script src="./scripts.js" charset="utf-8"></script>
+        <script src="./js/elements.js" charset="utf-8"></script>
+        <script>
+            const params = router.loadInitialRoute();
+            router.loadRoute(params);
+        </script>
 
-            <div class="content" id="content">
-                <div class="actions">
-                    <button onclick="closeLyricsNode()">X</button>
-                </div>
-                <div class="song-container">
-                    <div class="song-details">
-                        <div class="cover-image" id="selAlbumImg">
-                            
-                        </div>
-                        <div class="details">
-                            <h2 id="selTitleHeading"></h2>
-                            <div class="meta" id="meta">
-                                <!-- <div><span>Artist: </span> <a href="" class="artist">Led Zeppelin</a></div>
-                                <div><span>Album: </span> <a href="" class="album">Led Zeppelin IV (Deluxe Edition)</a>
-                                </div> -->
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="lyrics" id="lyrics">
-                        
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <script src="./scripts.js" charset="utf-8"></script>
-    <script src="./js/elements.js" charset="utf-8"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            changePlaceHolderValue();
-            fetchSearchResults('stairway');
-        });
-    </script>
-</body>
-
+        <!--
+        Icons made by <a href="https://www.flaticon.com/free-icon/songwriter_3225498" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    --></body>
 </html>
