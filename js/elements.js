@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // responsive layout
 
 const breakingPointSmall = 600;
@@ -7,40 +8,72 @@ function calculateCurrentWindowSize() {
     return window.innerWidth;
 }
 
-// eslint-disable-next-line no-unused-vars
-function openSmallSearch() {
-    const btn = document.getElementById('header-search-btn');
-    btn.style.display = 'none';
-    const smSearch = document.getElementById('header-search-sm');
-    smSearch.style.display = 'inherit';
+function showLyricsForSmallScreen() {
+    const lyrics = document.getElementById('lyrics-node');
+    if (window.innerWidth < 960) {
+        lyrics.style.display = 'inherit';
+        lyrics.style.position = 'absolute';
+        lyrics.style.background = '#222222';
+        lyrics.style.width = '100%';
+        lyrics.style.height = 'calc( 100% - 150px )';
+        lyrics.style.left = '0';
+    }
 }
-
-// eslint-disable-next-line no-unused-vars
-function closeSmallSearch() {
-    const btn = document.getElementById('header-search-btn');
-    btn.style.display = 'inherit';
-    const smSearch = document.getElementById('header-search-sm');
-    smSearch.style.display = 'none';
-}
-
-function makeAppResponsive() {
-    const currentWidth = calculateCurrentWindowSize();
-    if (currentWidth <= breakingPointSmall) {
-        const headerNavNormal = document.getElementById('header-nav-normal');
-        if (headerNavNormal) headerNavNormal.style.display = 'none';
-        const headerNavSmall = document.getElementById('header-nav-sm');
-        if (headerNavNormal) headerNavSmall.style.display = 'flex';
-    } else if (currentWidth <= breakingPointMedium) {
-        const headerNavNormal = document.getElementById('header-nav-normal');
-        if (headerNavNormal) headerNavNormal.style.display = 'flex';
-        const headerNavSmall = document.getElementById('header-nav-sm');
-        if (headerNavNormal) headerNavSmall.style.display = 'none';
-    } else {
-        const headerNavNormal = document.getElementById('header-nav-normal');
-        if (headerNavNormal) headerNavNormal.style.display = 'flex';
-        const headerNavSmall = document.getElementById('header-nav-sm');
-        if (headerNavNormal) headerNavSmall.style.display = 'none';
+function closeLyricsForSmallScreen() {
+    const lyrics = document.getElementById('lyrics-node');
+    if (window.innerWidth < 960) {
+        lyrics.style.display = 'none';
     }
 }
 
-window.onresize = makeAppResponsive();
+function addSearchSuggestions() {
+    const suggestionsNode = document.getElementById('search-suggestions');
+    let html = `<div class="suggestion-actions">
+                    <span class="suggestions-title">
+                        Recent Searches
+                    </span>
+                    <span class="suggestions-btn"
+                        onclick="clearSearchHistory()"
+                        >
+                        clear search history
+                    </span>
+                </div>`;
+    const items = JSON.parse(localStorage.getItem('suggestions')) || [];
+    items.forEach((value) => {
+        html += `<div class="suggestions-item" onclick="handleInputFromHistory('${value}')">${value}</div>`;
+    });
+    suggestionsNode.style.display = 'block';
+    suggestionsNode.innerHTML = html;
+}
+function clearSearchHistory() {
+    localStorage.removeItem('suggestions');
+    const suggestionsNode = document.getElementById('search-suggestions');
+    suggestionsNode.style.display = 'none';
+}
+
+function closeSearchHistory() {
+    setTimeout(() => {
+        const suggestionsNode = document.getElementById('search-suggestions');
+        suggestionsNode.style.display = 'none';
+    }, 300);
+}
+
+function handleInputFromHistory(searchText) {
+    const search = document.getElementById('search');
+    search.value = searchText;
+    search.dispatchEvent(new Event('input', { bubbles: true }));
+}
+
+function copyLyrics() {
+    try {
+        const textArea = document.getElementById('lyrics').innerText;
+        const input = document.createElement('textarea');
+        input.innerHTML = textArea;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+    } catch (err) {
+        console.log(err);
+    }
+}
