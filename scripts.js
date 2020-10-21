@@ -177,7 +177,7 @@ const getResults = {
             this.searchResults(routeObject.search);
         }
         // eslint-disable-next-line no-prototype-builtins
-        if (routeObject.hasOwnProperty('lyrics') && routeObject.hasOwnProperty('artist')) {
+        if (routeObject.lyrics && routeObject.artist) {
             this.getLyrics(routeObject.artist, routeObject.lyrics, routeObject.artist, '');
         }
     },
