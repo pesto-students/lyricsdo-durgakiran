@@ -63,7 +63,7 @@ const uiManipulations = {
                     onclick="handleInteractions.getLyrics('${value.artist.name}', '${value.title}', '${value.album.title}', '${value.album.cover_medium}')">
                     <img src="${value.album.cover_small}"
                         class="results__list-item-logo"
-                        onerror="this.onerror=null;this.src='./assets/hero-background-small.jpg'"
+                        onerror="this.onerror=null;this.src='https://pesto-students.github.io/assets/hero-background-small.jpg'"
                     />
                     <div class="results__list-content">
                         <h3 class="results__list-content-title">
@@ -104,7 +104,7 @@ const uiManipulations = {
         const html = `<div class="results__lyrics-header">
                         <img 
                             src='${image}'
-                            onerror="this.onerror=null;this.src='./assets/hero-background-small.jpg'"
+                            onerror="this.onerror=null;this.src='https://pesto-students.github.io/assets/hero-background-small.jpg'"
                             class="results__lyrics-header-logo"
                         />
                         <div class="results__lyrics-header-meta">
