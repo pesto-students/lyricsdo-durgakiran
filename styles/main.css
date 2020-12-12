@@ -1,0 +1,45 @@
+:root{
+    --background-color: #222222;
+    --black-shadow: #21252d;
+    --band-primary-color: #ff5722;
+    --brand-secondary: #f44336;
+    --brand-success: #2196f3;
+    --brand-warning: #f1c40f;
+    --brand-danger: #f44336;
+    --brand-info: #4caf50;
+    --color: #ffffff;
+    font-size: 16px;
+    --font-family: 'Noto Sans JP', sans-serif;
+    --font-family-heading: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background-color);
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 99;
+}
+
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    background-color: var(--brand-secondary);
+    -webkit-box-shadow: inset 0 0 2px var(--brand-secondary); 
+}
